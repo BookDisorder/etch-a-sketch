@@ -3,14 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Etch-a-Sketch Proejct</title>
+    <title>Etch-a-Sketch Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
 <body>
+    <div id="container">
+    </div>
 
     <script>
+        function createGrid(size){
+            const container = document.getElementById('container');
+            let totalSquares = size * size;
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            for (let i = 0; i < totalSquares; i++){
+                const newSquare = document.createElement('div');
+                newSquare.classList.add('newSquare');
+                container.appendChild(newSquare);
+                newSquare.addEventListener('mouseover', function(e){
+                    newSquare.style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
+                })
+            }
+            document.documentElement.style.setProperty("--rowNum", size);
+            document.documentElement.style.setProperty("--colNum", size);
+        }
+  
+        createGrid(16);        
     </script>
 </body>
 </html>
