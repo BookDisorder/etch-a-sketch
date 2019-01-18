@@ -28,7 +28,3 @@ body{
 .newSquare {
     border: 1px solid black;
 }
-
-.newSquare:hover:after{
-    background-color: pink;
-}
