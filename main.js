@@ -39,8 +39,7 @@ const gridContainer = document.getElementById('gridContainer');
             newSquare.classList.add('newSquare');
             gridContainer.appendChild(newSquare);
             newSquare.addEventListener('mouseover', function(e){
-                let randomColor = Math.floor(Math.random()*16777215).toString(16);
-            newSquare.style.backgroundColor = randomColor;
+            newSquare.style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);;
             newSquare.style.border = '0px';
             });    
 
