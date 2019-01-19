@@ -6,30 +6,28 @@
     <title>Etch-a-Sketch Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 <body>
-    <div id="container">
+    <div class="grid">
+        <header><h1>Etch-A-Sketch Project</h1></header>
+        <nav>            
+            <ul>
+                <li><button id = 'newGridButton'>New Grid</button></li>
+                <li><button id = 'pencilButton'>New Pencil Grid</button></li>
+                <li><button id = 'colorfulButton'>New Colorful Grid</button></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="gridContainer"></div>
+        </main>
+        <aside>
+            <h3>"...a browser version of something between a sketchpad and an Etch-A-Sketch."</h3>
+            <p>A square grid of square divs created using JavaScript and CSS Grid.</p> 
+            <p>Reset the grid using the buttons. The size entered at the prompt gives the number of squares on each side. Use the mouse to draw on the grid.</p> 
+            <p></p>Each mouse pass in the Pencil Grid darkens the grid square by 10%. Each mouse pass in the Colorful Grid colors the grid with a random color.</p>            
+        </aside>
+        <footer>Created as part of <a href ="https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project">The Odin Project Web Development 101 Curriculum.</a></footer>
     </div>
-
-    <script>
-        function createGrid(size){
-            const container = document.getElementById('container');
-            let totalSquares = size * size;
-            let randomColor = Math.floor(Math.random()*16777215).toString(16);
-            for (let i = 0; i < totalSquares; i++){
-                const newSquare = document.createElement('div');
-                newSquare.classList.add('newSquare');
-                container.appendChild(newSquare);
-                newSquare.addEventListener('mouseover', function(e){
-                    newSquare.style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
-                })
-            }
-            document.documentElement.style.setProperty("--rowNum", size);
-            document.documentElement.style.setProperty("--colNum", size);
-        }
-  
-        createGrid(16);        
-    </script>
+    <script src ="main.js"></script>    
 </body>
 </html>
