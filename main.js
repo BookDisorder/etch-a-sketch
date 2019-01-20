@@ -23,8 +23,8 @@ const gridContainer = document.getElementById('gridContainer');
             newSquare.classList.add('newSquare');
             gridContainer.appendChild(newSquare);
             newSquare.addEventListener('mouseover', function(e){
-            newSquare.style.backgroundColor = 'black';
-            newSquare.style.opacity -= '-0.1';
+                newSquare.style.backgroundColor = 'black';
+                newSquare.style.opacity -= '-0.1';
             });    
 
         }
@@ -34,13 +34,14 @@ const gridContainer = document.getElementById('gridContainer');
 
     function colorfulGrid(size){
         let totalSquares = size * size;
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
         for (let i = 0; i < totalSquares; i++){
             const newSquare = document.createElement('div');
             newSquare.classList.add('newSquare');
             gridContainer.appendChild(newSquare);
             newSquare.addEventListener('mouseover', function(e){
-            newSquare.style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
-            newSquare.style.border = '0px';
+                newSquare.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                newSquare.style.border = '0px';
             });    
 
         }
